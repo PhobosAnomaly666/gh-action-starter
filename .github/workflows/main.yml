@@ -6,6 +6,11 @@ branding:
   icon: 'docker'
   color: 'gray-dark'
 
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
+# Conditions et lancement du workflow
+run-name: Le workflow de ${{ github.actor }} est lancé
+on:
+  [push]
+jobs:
+  runs:
+    using: 'docker'
+    image: 'Dockerfile'
